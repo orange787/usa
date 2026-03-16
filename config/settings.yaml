@@ -1,0 +1,107 @@
+# Global Settings
+
+telegram:
+  # Keywords that trigger automatic requirement extraction
+  trigger_keywords:
+    - "需求"
+    - "bug"
+    - "紧急"
+    - "功能"
+    - "优化"
+    - "修复"
+    - "新增"
+    - "改进"
+    - "问题"
+    - "建议"
+  # Bot commands
+  commands:
+    submit: "/submit"
+    status: "/status"
+    list: "/list"
+    help: "/help"
+
+lark:
+  # Card template settings
+  card_actions:
+    - id: "accept"
+      label: "接受"
+      type: "primary"
+    - id: "reject"
+      label: "拒绝"
+      type: "danger"
+    - id: "discuss"
+      label: "需讨论"
+      type: "default"
+
+github:
+  # Label prefixes
+  label_prefixes:
+    type: "type/"
+    priority: "priority/"
+    status: "status/"
+    source: "source/"
+  # Status flow
+  status_flow:
+    - "status/todo"
+    - "status/in-progress"
+    - "status/review"
+    - "status/done"
+
+requirement:
+  # Priority levels
+  priorities:
+    - name: "P0"
+      label: "priority/P0"
+      description: "紧急 - 需立即处理"
+      color: "d73a4a"
+    - name: "P1"
+      label: "priority/P1"
+      description: "高 - 本迭代必须完成"
+      color: "e99695"
+    - name: "P2"
+      label: "priority/P2"
+      description: "中 - 计划中"
+      color: "fbca04"
+    - name: "P3"
+      label: "priority/P3"
+      description: "低 - 有空再做"
+      color: "0e8a16"
+  # Requirement types
+  types:
+    - name: "feature"
+      label: "type/feature"
+      description: "功能需求"
+      color: "1d76db"
+    - name: "bug"
+      label: "type/bug"
+      description: "Bug修复"
+      color: "d73a4a"
+    - name: "data"
+      label: "type/data"
+      description: "数据需求"
+      color: "5319e7"
+    - name: "event"
+      label: "type/event"
+      description: "活动需求"
+      color: "f9d0c4"
+    - name: "optimization"
+      label: "type/optimization"
+      description: "优化建议"
+      color: "bfdadc"
+
+scheduling:
+  # Daily digest time (24h format)
+  daily_digest_hour: 10
+  daily_digest_minute: 0
+  # Escalation timeout (hours)
+  escalation_timeout_hours: 48
+
+llm:
+  # Default provider
+  default_provider: "claude"
+  # Temperature for different tasks
+  temperatures:
+    requirement_extract: 0.3
+    priority_assess: 0.2
+    summarize: 0.5
+    report: 0.4

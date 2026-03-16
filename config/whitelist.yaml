@@ -1,0 +1,17 @@
+# Admin Whitelist Configuration
+
+telegram:
+  # Telegram admin user IDs who can approve requirements
+  admin_ids:
+    - 5586219112
+  # Group IDs where the bot operates
+  allowed_groups:
+    - -5132508840
+
+lark:
+  # Lark admin user IDs who can approve question lists
+  admin_ids:
+    - "ou_xxxxxxxxxxxx"  # 如需飞书审批，替换为实际 Lark user ID
+  # Chat IDs where the bot operates
+  allowed_chats:
+    - "oc_bd6d966ece96e3b40d0bdef23de89305"

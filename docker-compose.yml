@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  bot:
+    build: .
+    container_name: ops-dev-bridge
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./config:/app/config
+    ports:
+      - "${WEBHOOK_PORT:-8443}:8443"
+    depends_on:
+      - redis
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: ops-dev-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+volumes:
+  redis_data:
